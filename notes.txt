@@ -1,0 +1,39 @@
+http://www.vaisala.com/en/meteorology/applications/airqualitymonitoringandprediction/Pages/default.aspx
+https://code.google.com/p/google-api-java-client/wiki/DeveloperGuide
+http://ces.iisc.ernet.in/energy/water/proceed/section5/paper3/section5paper3.htm
+https://api.accuweather.com/developers/airQuality
+http://www.iitg.ernet.in/scifac/qip/public_html/cd_cell/CD%20Cell%20Lab%20Manual%20Report.pdf
+
+http://www.iitg.ernet.in/scifac/qip/public_html/cd_cell/CD%20Cell%20Lab%20Manual%20Report.pdf
+
+
+Assembla Code:
+--------------
+Url : https://subversion.assembla.com/svn/airpoputionforecast/trunk
+User name : aruna.Swain
+password : set@Ups1
+
+
+
+http://localhost:9090/demos/jqxgauge/linear-gauge-settings.htm
+
+
+Presentation:
+=============
+1) Decision making and preventive measures.
+
+2)The ability to accurately monitor, diagnose, and forecast weather conditions is critical for air quality organizations in terms of understanding pollutant formation, transformation, dispersion, transport and removal.
+
+3)Changes in day-to-day weather are the greatest factor in controlling changes in air quality. As well as determining how quickly pollutants are dispersed away from an area, weather also affects the thickness of the atmospheric layer that traps pollution in our breathable air. 
+
+Current Technologies used to measure air quality include:
+radiosondes
+boundary layer profilers
+ceilometers
+wind sensors
+
+
+
+PM,SO2,NOx
+T- temperature, P - pressure, WD - wind direction and WV - wind velocity
+surface weather sensors and stations

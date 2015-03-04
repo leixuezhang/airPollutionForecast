@@ -1,0 +1,77 @@
+package com.airforecast.dao;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.airforecast.model.area.Area;
+import com.airforecast.model.area.GeoLocation;
+import com.mongodb.Mongo;
+
+/**
+ * @author Dinesh Rajput
+ * 
+ */
+@Repository
+public class DaoUtil {
+
+	static MongoTemplate temp;
+	static {
+		try {
+			Mongo mongo = new Mongo("localhost", 27017);
+			temp = new MongoTemplate(mongo, "app");
+			temp.dropCollection(Area.class);
+			for (Area area : MockDaoUtil.areas.values()) {
+				temp.insert(area);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public Collection<Area> getArea() {
+		List<Area> areaLst = temp.findAll(Area.class);
+		return areaLst == null ? MockDaoUtil.areas.values() : areaLst;
+	}
+
+	public List<String> getAreaCode() {
+		Collection<Area> areas = getArea();
+		List<String> areaCode = new ArrayList<>();
+		for (Area area : areas) {
+			areaCode.add(area.getCode());
+		}
+		return areaCode;
+	}
+
+	public List<String> getAreaGeoLocation() {
+		Collection<Area> areas = getArea();
+		List<String> areaCode = new ArrayList<>();
+		for (Area area : areas) {
+			areaCode.add(area.getLatitude() + "," + area.getLongitude());
+		}
+		return areaCode;
+	}
+
+	public Area getArea(String areaCode) {
+		Collection<Area> areas = getArea();
+		for (Area area : areas) {
+			if (area.getCode().equalsIgnoreCase(areaCode))
+				return area;
+		}
+		return null;
+	}
+
+	public Area getArea(String lat, String lng) {
+		Collection<Area> areas = getArea();
+		for (Area area : areas) {
+			if (lat.equals(String.valueOf(area.getLatitude()))
+					&& lng.equals(String.valueOf(area.getLongitude())))
+				return area;
+		}
+		return null;
+	}
+
+}

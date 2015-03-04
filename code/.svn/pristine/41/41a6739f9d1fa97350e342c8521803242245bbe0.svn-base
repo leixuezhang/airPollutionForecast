@@ -1,0 +1,85 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="weather">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="current_weather">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="temp"/>
+              <xs:element type="xs:string" name="temp_unit"/>
+              <xs:element name="wind">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="speed"/>
+                    <xs:element type="xs:string" name="dir"/>
+                    <xs:element type="xs:string" name="wind_unit"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:byte" name="humidity"/>
+              <xs:element type="xs:short" name="pressure"/>
+              <xs:element type="xs:string" name="weather_text"/>
+              <xs:element type="xs:byte" name="weather_code"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="forecast" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:date" name="date"/>
+              <xs:element type="xs:string" name="temp_unit"/>
+              <xs:element type="xs:byte" name="day_max_temp"/>
+              <xs:element type="xs:byte" name="night_min_temp"/>
+              <xs:element name="day">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="weather_text"/>
+                    <xs:element type="xs:byte" name="weather_code"/>
+                    <xs:element name="wind">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="speed"/>
+                          <xs:element type="xs:string" name="dir"/>
+                          <xs:element type="xs:byte" name="dir_degree"/>
+                          <xs:element type="xs:string" name="wind_unit"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:float" name="precip_mm"/>
+                    <xs:element type="xs:byte" name="cloudcover"/>
+                    <xs:element type="xs:byte" name="humidity"/>
+                    <xs:element type="xs:byte" name="visibility_km"/>
+                    <xs:element type="xs:short" name="pressure_mb"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="night">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="weather_text"/>
+                    <xs:element type="xs:byte" name="weather_code"/>
+                    <xs:element name="wind">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:byte" name="speed"/>
+                          <xs:element type="xs:string" name="dir"/>
+                          <xs:element type="xs:byte" name="dir_degree"/>
+                          <xs:element type="xs:string" name="wind_unit"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:float" name="precip_mm"/>
+                    <xs:element type="xs:byte" name="cloudcover"/>
+                    <xs:element type="xs:byte" name="humidity"/>
+                    <xs:element type="xs:byte" name="visibility_km"/>
+                    <xs:element type="xs:short" name="pressure_mb"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
